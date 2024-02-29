@@ -78,15 +78,16 @@ gens = gpd.GeoDataFrame(
     full_df,
     geometry=gpd.points_from_xy(full_df["Y"], full_df["X"]),
     crs="EPSG:4326",
-).to_file("gens_point.shp")
+)
+# .to_file("gens.shp")
 
 
-gens_point = gpd.read_file(os.path.join("gens_point.shp"))
-gens_point = gens_point.to_crs(4326)
+# gens = gpd.read_file(os.path.join("gens.shp"))
+gens = gens.to_crs(4326)
 
 attribution = "Coeur sur vous les dodos"
 
-m = gens_point.explore(
+m = gens.explore(
     location=[48.858053, 2.2944991],
     tiles="cartodb positron",
     zoom_start=6,
