@@ -12,6 +12,7 @@ print("Opening excel data.xlsx... ", end="")
 path = os.path.join("data.xlsx")
 dataset = pd.read_excel(path)
 print("Noot")
+print("Renaming columns... ", end ="")
 ancien_nom_vers_nouveau_nom = {
     "Nom": "Identite",
     "Dans quelle entreprise es-tu en stage ?": "Entreprise1",
@@ -22,14 +23,13 @@ ancien_nom_vers_nouveau_nom = {
     "Raconte nous ce que tu fais ou tes missions dans ce petit paragraphe suivant (pas obligatoire)": "Missions"
     # ...
 }
-
 dataset = dataset.rename(columns=ancien_nom_vers_nouveau_nom)
-# dataset2 = dataset.rename(columns=ancien_nom_vers_nouveau_nom)
+print("Noot")
 head1 = ["Identite", "Entreprise1", "Ville", "Entreprise2", "Ville2", "ZIP", "Missions"]
 # creating a subset of dataset called df
 df = dataset[head1].copy()
 
-
+print("Adding and filling town, company and x, y fields ", end="")
 ## ADDING NEW COLUMNS
 # Adding text columns for Towns and companies
 df.loc[:, "Ville0"] = pd.Series(["NULL"] * len(df))
@@ -62,8 +62,9 @@ df["Adresse"] = df["ZIP"].apply(lambda x: str(x) + ", France")
 
 df["X"] = df["Adresse"].apply(lambda x: locator.geocode(x).latitude)
 df["Y"] = df["Adresse"].apply(lambda x: locator.geocode(x).longitude)
+print("Noot noot")
 
-
+print("Creating and saving map ", end="")
 ### Creating subset of df
 colonnes_a_conserver2 = ["Identite", "Entreprise0", "Ville0", "X", "Y", "Missions"]
 full_df = df[colonnes_a_conserver2]
@@ -99,3 +100,4 @@ folium.Marker(
 
 # saving map as html to be displayed in index.html on github pages
 m.save("map.html")
+print(100*' NOOT')
