@@ -8,8 +8,10 @@ import os
 
 
 # importing data
+print("Opening excel data.xlsx... ", end="")
 path = os.path.join("data.xlsx")
 dataset = pd.read_excel(path)
+print("Noot")
 ancien_nom_vers_nouveau_nom = {
     "Nom": "Identite",
     "Dans quelle entreprise es-tu en stage ?": "Entreprise1",
@@ -25,19 +27,20 @@ dataset = dataset.rename(columns=ancien_nom_vers_nouveau_nom)
 # dataset2 = dataset.rename(columns=ancien_nom_vers_nouveau_nom)
 head1 = ["Identite", "Entreprise1", "Ville", "Entreprise2", "Ville2", "ZIP", "Missions"]
 # creating a subset of dataset called df
-df = dataset[head1]
+df = dataset[head1].copy()
 
 
 ## ADDING NEW COLUMNS
 # Adding text columns for Towns and companies
-df["Ville0"] = pd.Series(["NULL"] * len(df))
-df["Entreprise0"] = pd.Series(["NULL"] * len(df))
+df.loc[:, "Ville0"] = pd.Series(["NULL"] * len(df))
+df.loc[:, "Entreprise0"] = pd.Series(["NULL"] * len(df))
 
-df["X"] = pd.Series([0] * len(df))
-df["Y"] = pd.Series([0] * len(df))
+df.loc[:, "X"] = pd.Series([0] * len(df))
+df.loc[:, "Y"] = pd.Series([0] * len(df))
 # not sure what this is for
-df["Ville0"] = df["Ville"].fillna(df["Ville2"])
-df["Entreprise0"] = df["Entreprise1"].fillna(df["Entreprise2"])
+df.loc[:, "Ville0"] = df["Ville"].fillna(df["Ville2"]).copy()
+# df.loc["Ville0", :] = df["Ville"].fillna(df["Ville2"]).copy()
+df.loc[:, "Entreprise0"] = df["Entreprise1"].fillna(df["Entreprise2"]).copy()
 
 
 # Import des coordonnées X et Y
