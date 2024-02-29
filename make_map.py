@@ -24,9 +24,7 @@ ancien_nom_vers_nouveau_nom = {
 dataset = dataset.rename(columns=ancien_nom_vers_nouveau_nom)
 # dataset2 = dataset.rename(columns=ancien_nom_vers_nouveau_nom)
 head1 = ["Identite", "Entreprise1", "Ville", "Entreprise2", "Ville2", "ZIP", "Missions"]
-
-# not sure why we are making a subset
-# df = dataset2[head1]
+# creating a subset of dataset called df
 df = dataset[head1]
 
 
@@ -40,9 +38,6 @@ df["Y"] = pd.Series([0] * len(df))
 # not sure what this is for
 df["Ville0"] = df["Ville"].fillna(df["Ville2"])
 df["Entreprise0"] = df["Entreprise1"].fillna(df["Entreprise2"])
-
-# saving to csv (not sure why)
-# df.to_csv("CSV.csv")
 
 
 # Import des coordonnées X et Y
@@ -70,23 +65,19 @@ df["Y"] = df["Adresse"].apply(lambda x: locator.geocode(x).longitude)
 colonnes_a_conserver2 = ["Identite", "Entreprise0", "Ville0", "X", "Y", "Missions"]
 full_df = df[colonnes_a_conserver2]
 
-
-# full_df.to_csv("Clean.csv")
-# full_df = pd.read_csv(os.path.join("Clean.csv"))
-
+# Creating geodataframe from full_df
 gens = gpd.GeoDataFrame(
     full_df,
     geometry=gpd.points_from_xy(full_df["Y"], full_df["X"]),
     crs="EPSG:4326",
 )
-# .to_file("gens.shp")
-
-
-# gens = gpd.read_file(os.path.join("gens.shp"))
+# Setting godataframe projection
 gens = gens.to_crs(4326)
 
+# Setting script at bottom of map
 attribution = "Coeur sur vous les dodos"
 
+# Adding point for people to map, setting map as m
 m = gens.explore(
     location=[48.858053, 2.2944991],
     tiles="cartodb positron",
@@ -96,12 +87,12 @@ m = gens.explore(
     attr=attribution,
 )
 
-
+# Adding green marker for UniLaSalle
 folium.Marker(
     location=[49.460715173019175, 2.0705808327370465],
     popup="Maison",
     icon=folium.Icon(color="green", icon="ok-sign"),
 ).add_to(m)
 
-
+# saving map as html to be displayed in index.html on github pages
 m.save("map.html")
