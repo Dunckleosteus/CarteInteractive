@@ -1,6 +1,6 @@
 ,Identite,Entreprise0,Ville0,X,Y,Missions
-1,Es,TotalEnergies,Pau,43.30233224184398,-0.3666667168794326,Je bois du café
-3,Grajezyk Maeva,TotalEnergies,Pau,43.3035191,-0.3294996,
+1,Es,TotalEnergies,Pau,43.302294857588656,-0.3667081834042553,Je bois du café
+3,Grajezyk Maeva,TotalEnergies,Pau,43.3149045,-0.3777812,
 4,Mehaute,Setec hydratec,Paris,48.84583158292367,2.386521343078913,
 8,Leroux,EDF,Aix en Provence,43.49803652,5.382667675,
 11,Salaün ,TotalEnergies ,"Courbevoie, la défense ",48.89762283664596,2.254485928778468,De la géol très géol 
@@ -12,7 +12,7 @@
 19,Guerin,Egis ,Modane,45.22019793115183,6.726498922774869,Suivi de chantier sur un des chantiers du Lyon Turin 
 20,Ledur,Explor-e,Yerville,49.667161297142854,0.9050053199999999,Diagnostics de forages d’eau potable
 21,Foy,Bouygues Construction,Angers,47.46375127210762,-0.5810840250224215,
-22,EMBS--SCHNEIDER,TotalEnergies,Pau,43.30233224184398,-0.3666667168794326,Prédiction de perméabilité à partir d'imagerie de puits
+22,EMBS--SCHNEIDER,TotalEnergies,Pau,43.302294857588656,-0.3667081834042553,Prédiction de perméabilité à partir d'imagerie de puits
 23,ASTIÉ ,RAMBOLL,Paris,48.86820407303754,2.3441709938566553,Bonne question ? Je ne sais pas moi-même 
 24,Mariotte ,Ramboll,Aix-en-Provence,43.526524928601695,5.430714193432204,
 25,De la Fouchardière ,Météo France International ,Toulouse ,43.572396417063494,1.4070247476190476,
@@ -20,9 +20,9 @@
 28,Klein,Fondasol,Montpellier,43.615986409335044,3.878501681713555,"Ingénieur en Bureau d’études avec réalisation de devis, rédaction de rapport G1-G2AVP/Pro-G5, réalisation de chantiers, encadrement de stagiaires en MFE et Masters et pleins d’autres trucs"
 29,Rame,BRGM,Bordeaux ,44.79564500773168,-0.6789986973060346,Modélisation hydro
 30,Marek,Géoressources,Vandoeuvre les Nancy,48.65623013333333,6.1664501,"La mission de mon stage est de comprendre l'origine et la répartition de carbonates (calcite et dolomite) dans un gisement d'uranium en Ouzbékistan. Il s'agit d'un stage en labo, du coup je fais du microscope, de la cathodoluminscence, du MEB, de la XRF, et l'un des objectifs principaux est de réaliser de l'isotopie du C et de l'O sur les carbonates. Le tout pour savoir quel est le lien entre les carbonates et l'uranium"
-31,Abdeddaïm,Total ,Paris La Défense ,44.7936698,-0.668297,
+31,Abdeddaïm,Total ,Paris La Défense ,44.2390076,1.8251231,
 33,PAULIN,LIRIS - INSA Lyon,VILLEURBANNE,45.76825371548117,4.887535619246862,Etude sur souterrains de Lyon
-35,Daguet ,Socotec,Tours,47.35270716217228,0.6607689029962547,
+35,Daguet ,Socotec,Tours,47.35261122754717,0.6604219207547171,
 37,Floch ,Anteagroup,Colombelles ,49.19092367973684,-0.30228997447368416,Automatisation de cartes piezometriques 
 38,PEYROT,BRGM,Orléans,47.86357224788975,1.915733462446167,Analyse probabiliste du risque de retombée de cendres en Martinique
 42,Lepain ,Beicip-Franlab,Rueil-Malmaison,48.874828033174225,2.1829140914081147,Je vais tester de modéliser un environnement de dépôt et ensuite tester de nouvelles fonctionnalités pour suivre le trajet du lithium dans le sol. Ça va être un stage très très intense. 

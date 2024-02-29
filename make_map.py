@@ -69,13 +69,14 @@ df["Y"] = df["Adresse"].apply(lambda x: locator.geocode(x).longitude)
 ### Creating subset of df
 colonnes_a_conserver2 = ["Identite", "Entreprise0", "Ville0", "X", "Y", "Missions"]
 full_df = df[colonnes_a_conserver2]
-full_df.to_csv("Clean.csv")
 
-datasetmap = pd.read_csv(os.path.join("Clean.csv"))
+
+# full_df.to_csv("Clean.csv")
+# full_df = pd.read_csv(os.path.join("Clean.csv"))
 
 gens = gpd.GeoDataFrame(
-    datasetmap,
-    geometry=gpd.points_from_xy(datasetmap["Y"], datasetmap["X"]),
+    full_df,
+    geometry=gpd.points_from_xy(full_df["Y"], full_df["X"]),
     crs="EPSG:4326",
 ).to_file("gens_point.shp")
 
