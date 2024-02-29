@@ -12,7 +12,7 @@ print("Opening excel data.xlsx... ", end="")
 path = os.path.join("data.xlsx")
 dataset = pd.read_excel(path)
 print("Noot")
-print("Renaming columns... ", end ="")
+print("Renaming columns... ", end="")
 ancien_nom_vers_nouveau_nom = {
     "Nom": "Identite",
     "Dans quelle entreprise es-tu en stage ?": "Entreprise1",
@@ -100,4 +100,4 @@ folium.Marker(
 
 # saving map as html to be displayed in index.html on github pages
 m.save("map.html")
-print(100*' NOOT')
+print(100 * " NOOT")
