@@ -8,22 +8,28 @@
         #map-container {
             width: 100%;
             height: 500px; /* Adjust the height as needed */
+            margin: 0 auto; /* Center align horizontally */
+            display: flex; /* Use flexbox for centering vertically */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
         }
         body{
           background-image: url('noot.gif');
-
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: cover;
         }
     </style>
   </head>
   <body>
-    <h1>Carte Interactive O84 </h1>
-    <h2> Noot Noot </h2>
-    <img src="noot.gif"/>
-    <div id="map-container">
-        <iframe src="map.html" width="100%" height="100%" frameborder="0" scrolling="no"></iframe>
+    <h1 style="color:white;background-color:DodgerBlue;text-align:center;padding:50px;width:50%;align:center;margin-left:auto;
+  margin-right:auto;">Carte Interactive O84 </h1>
+
+    <div id="spacing" style="height=200px"></div>
+
+
+    <div id="map-container" style="justify-content:center">
+        <iframe src="map.html" width="50%" height="100%" allowfullscreen="true"></iframe>
     </div>
 </html>
 
-//background-repeat: no-repeat;
-//background-attachment: fixed;
-//background-size: cover;
