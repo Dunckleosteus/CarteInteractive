@@ -1,5 +1,5 @@
 # Handling imports
-from geopy.geocoders import Nominatim
+# from geopy.geocoders import Nominatim
 import folium
 import pandas as pd
 import geopandas as gpd
